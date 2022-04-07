@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var searchText = ""
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            List {
+                NavigationLink("Detail") {
+                    Text("Detail")
+                }
+            }
+            .searchable(text: $searchText)
+        }
     }
 }
 
